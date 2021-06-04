@@ -142,15 +142,25 @@ address {
   justify-content: space-between;
 }
 
-.logo {
-  margin-right: 95px;
+.logo-header {
+  margin-right: 93px;
+}
+
+.navigation-menu-item .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .navigation-menu-item:not(:last-child) {
   margin-right: 50px;
 }
 
-.navigation-menu-link {
+.navigation-menu .link.current {
+  position: relative;
+  color: var(--accent-color);
+}
+
+.navigation-menu .link{
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -159,17 +169,8 @@ address {
   color: var(--main-color);
 }
 
-.navigation-menu-main-link {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-
-  color: var(--accent-color);
-}
-
-.navigation-menu-link:hover,
-.navigation-menu-link:focus {
+.navigation-menu-item .link:hover,
+.navigation-menu-item .link:focus {
   color: var(--accent-color);
 }
 
@@ -280,8 +281,25 @@ address {
   padding-top: 94px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .advantages-contant {
-  padding: 25px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
   background-color: #F5F4FA;
   border-radius: 4px;
   margin-bottom: 30px;
@@ -382,7 +400,9 @@ address {
 /* ==== Regular customers section ==== */
 
 .customers-contant {
-  padding: 16px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #AFB1B8;
   border-radius: 4px;
   width: 170px;
@@ -443,7 +463,7 @@ footer {
   margin-right: 70px;
 }
 
-.footer-contacts {
+address {
   margin-top: 20px;
 }
 
@@ -481,8 +501,11 @@ footer {
 .footer-description {
   text-transform: uppercase;
   color: var(--secondary-color);
-  padding-top: 12px;
   margin-bottom: 20px;
+}
+
+.footer-list-item {
+  margin-right: 10px;
 }
 
 .footer-list-link {
@@ -497,17 +520,12 @@ footer {
   border-radius: 50%;
 }
 
-.footer-list-link {
-  margin-right: 10px;
-}
-
 .footer-list-link:hover,
 .footer-list-link:focus {
   background-color: var(--accent-color);
 }
 
-.footer-list-link:hover .social-list-icon,
-.footer-list-link:focus .social-list-icon {
+.footer-list-icon {
   fill: var(--secondary-color);
 }
 
@@ -542,9 +560,10 @@ footer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
-.filter-item {
+.filter-item:not(:first-child) {
   margin-left: 8px;
 }
 
@@ -553,7 +572,6 @@ footer {
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
-  padding-top: 50px;
 }
 
 .gallery-item {
